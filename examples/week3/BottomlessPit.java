@@ -6,7 +6,7 @@ public class BottomlessPit implements Fillable {
     public int getItemCount() {
         return 0;
     }
-    
+
     public boolean addItem() {
         return true;
     }
@@ -14,5 +14,4 @@ public class BottomlessPit implements Fillable {
     public boolean removeItem() {
         return false;
     }
-
 }

@@ -1,6 +1,10 @@
 public class Truck extends Vehicle {
     public Truck() {
-        super(100);
+        this(100);
+    }
+
+    public Truck(int capacity) {
+        super(capacity);
     }
 
     public void move() {

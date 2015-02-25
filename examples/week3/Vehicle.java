@@ -6,23 +6,23 @@ public abstract class Vehicle implements Moveable, Fillable {
         this.capacity = Math.max(capacity, 0);
     }
 
-    public int getItemCount() {
-        return load;
-    }
-
     public int getCapacity() {
         return capacity;
     }
 
+    public int getItemCount() {
+        return load;
+    }
+
     public boolean addItem() {
-        boolean canAddCargo = !isFull();
-        load += canAddCargo ? 1 : 0;
-        return canAddCargo;
+        boolean canAddItem = !isFull();
+        load += canAddItem ? 1 : 0;
+        return canAddItem;
     }
 
     public boolean removeItem() {
-        boolean canRemoveCargo = !isEmpty();
-        load -= canRemoveCargo ? 1 : 0;
-        return canRemoveCargo;
+        boolean canRemoveItem = !isEmpty();
+        load -= canRemoveItem ? 1 : 0;
+        return canRemoveItem;
     }
 }

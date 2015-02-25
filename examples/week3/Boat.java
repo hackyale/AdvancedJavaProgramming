@@ -1,6 +1,10 @@
 public class Boat extends Vehicle {
     public Boat() {
-        super(5000);
+        this(5000);
+    }
+
+    public Boat(int capacity) {
+        super(capacity);
     }
 
     public void move() {
