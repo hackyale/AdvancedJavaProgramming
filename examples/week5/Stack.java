@@ -23,6 +23,7 @@ public class Stack {
         return top.value;
     }
 
+    @Override
     public String toString() {
         return "TOP -> " + ((top == null) ? "[EMPTY]" : top.toString());
     }
