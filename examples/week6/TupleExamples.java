@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class TupleExamples { 
     public static void main(String[] args) {
         int[] arr = { 8, 6, 7, 5, 3, 0, 9 };
-        Tuple<Integer, Integer> maxAndMin = getLargestAndSmallest(arr);
+        Tuple2<Integer, Integer> maxAndMin = getLargestAndSmallest(arr);
         System.out.println("Max: " + maxAndMin.getFirst());
         System.out.println("Min: " + maxAndMin.getSecond());
     
@@ -16,7 +16,7 @@ public class TupleExamples {
         List<String> list2 = new ArrayList<>();
         list2.add("gamma");
         list2.add("delta");
-        Tuple<Integer, String> commonElem = getCommonElement(list1, list2);
+        Tuple2<Integer, String> commonElem = getCommonElement(list1, list2);
         if (commonElem.getFirst() == null) {
             System.out.println("Lists do not intersect.");
         } else {
@@ -26,11 +26,11 @@ public class TupleExamples {
         }
     }
 
-    public static Tuple<Integer, Integer> getLargestAndSmallest(int[] arr) {
+    public static Tuple2<Integer, Integer> getLargestAndSmallest(int[] arr) {
         if (arr == null) {
             return null;
         } else if (arr.length == 0) {
-            return new Tuple<>(null, null);
+            return new Tuple2<>(null, null);
         } else {
             int smallest = arr[0];
             int largest = arr[0];
@@ -41,16 +41,16 @@ public class TupleExamples {
                     largest = i;
                 }
             }
-            return new Tuple<>(largest, smallest);
+            return new Tuple2<>(largest, smallest);
         }
     }
 
-    public static <E> Tuple<Integer, E> getCommonElement(List<E> list1, List<E> list2) {
+    public static <E> Tuple2<Integer, E> getCommonElement(List<E> list1, List<E> list2) {
         for (int i = 0; i < list1.size(); i++) {
             if (list2.contains(list1.get(i))) {
-                return new Tuple<>(i, list1.get(i));
+                return new Tuple2<>(i, list1.get(i));
             }
         }
-        return new Tuple<>(null, null);
+        return new Tuple2<>(null, null);
     }
 }
